@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const fullOrderName = params.get("workbookId");
+
+      if (fullOrderName) {
+        // Extract the first numeric part (workbook ID)
+        const match = fullOrderName.trim().match(/^\d+/);
+        if (match) {
+          const workbookId = match[0];
+          const encodedId = encodeURIComponent(workbookId) + ".pdf";
+          const baseUrl = "https://o5.sharepoint.com/sites/TeamWorkbookOHA-Domagoj-Personal/Shared%20Documents/Operations1/";
+          window.location.href = baseUrl + encodedId;
+        } else {
+          document.body.innerHTML = "<h2>Error: Could not extract workbook ID from input.</h2>";
+        }
+      } else {
+        document.body.innerHTML = "<h2>Error: No workbookId provided in the URL.</h2>";
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting to your document...</p>
+</body>
+</html>
