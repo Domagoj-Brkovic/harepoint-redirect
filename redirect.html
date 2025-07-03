@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +9,6 @@
       const fullOrderName = params.get("workbookId");
 
       if (fullOrderName) {
-        // Extract the first numeric part from anywhere in the string
         const match = fullOrderName.trim().match(/\d+/);
         if (match) {
           const workbookId = match[0];
