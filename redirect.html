@@ -13,7 +13,7 @@
         if (match) {
           const workbookId = match[0];
           const encodedId = encodeURIComponent(workbookId) + ".pdf";
-          const baseUrl = "https://o5.sharepoint.com/sites/TeamWorkbookOHA-Domagoj-Personal/Shared%20Documents/Operations1/";
+          const baseUrl = "https://o5.sharepoint.com/:f:/r/sites/Shop_Dortmund/Shared%20Documents/Shop_Dortmund_Operations1-Iso_drawings_BNI/BNI_Isometric%20drawing%20+%20bending%20report?csf=1&web=1&e=QuXyET";
           window.location.href = baseUrl + encodedId;
         } else {
           document.body.innerHTML = "<h2>Error: Could not extract workbook ID from input.</h2>";
